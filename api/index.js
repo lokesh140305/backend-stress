@@ -57,6 +57,11 @@ function classifyStress(bpm, gsr, ecg, eeg) {
 
 // This is the serverless function that Vercel will deploy
 module.exports = async (req, res) => {
+    // Add CORS headers to allow requests from any origin
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
     try {
         const bpmResponse = await axios.get('https://blr1.blynk.cloud/external/api/get?token=m8h5qpc75E6CtgeFv6BCYpof-3y_fg29&v0=');
         const bpm = parseInt(bpmResponse.data, 10);
