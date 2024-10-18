@@ -49,7 +49,7 @@ function classifyStress(bpm, gsr, ecg, eeg) {
     } else if (totalStress === 1 || totalStress === 2) {
         return 1;  // Mild stress
     } else if (totalStress === 3 || totalStress === 4) {
-        return 2;  // Moderate stress
+        return 1;  // Moderate stress
     } else {
         return 2;  // High stress
     }
